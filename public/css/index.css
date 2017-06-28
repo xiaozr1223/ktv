@@ -1,0 +1,1006 @@
+*{
+	padding: 0;
+	margin:0;
+	box-sizing: border-box;
+	font-family: "苹方" "microsoft sans serif";
+	list-style: none;
+	font-size: 12px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-appearance: none;
+	-webkit-text-size-adjust:100%;
+	-webkit-user-select:none; 
+	-webkit-overflow-scrolling:touch;
+	-webkit-user-select:none;user-select:none;
+	-webkit-tap-highlight-color:rgba(255,255,255,0);
+	-webkit-text-size-adjust: 100%;
+     text-size-adjust: 100%;
+}
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+a{
+	display: block;
+	text-decoration: none;
+	color: #41454E;
+}
+.sy_box{
+	width: 100%;
+	height: 100%;
+	background-image: url(../img/shouye/sybj.jpg);
+	background-size: cover;
+	background-position: center center;
+	padding-top: .3rem;
+	/*display: flex;*/
+	position: relative;
+}
+.con{
+	width: 7.02rem;
+	margin: 0 auto;
+}
+.sy_box .pos{
+	position: relative;
+}
+.sy_box .pos img{
+	width: .3rem;
+	height: .4rem;
+}
+.sy_box .pos span{
+	color: #FFFFFF;
+	font-size: .26rem;
+	position: absolute;
+	left: .4rem;
+	top: 0;
+}
+.sy_box .pos img:nth-of-type(2){
+	width: .54rem;
+	height: 1px;
+	position: absolute;
+	left: .4rem;
+	bottom: .05rem;
+}
+.sy_box ul{
+	width: 7.02rem;
+	height: 4.86rem;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-content: space-between;
+	position: absolute;
+	bottom: .24rem
+}
+
+.sy_box ul>li{
+	width: 48%;
+	height: 2.3rem;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+	background-size: 2.35rem 1.45rem;
+	background-position: center center;
+	background-repeat: no-repeat;
+	
+}
+.sy_box ul>li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+/*首页结束*/
+
+/*game页面开始*/
+.game_box{
+	width: 100%;
+	height: 100%;
+	background: #F5F3FF url(../img/song/singer_01.png) no-repeat;
+	background-size: contain;
+	padding-top: .26rem
+}
+.title{
+	width: 100%;
+	height: .4rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: .36rem;
+	position: relative;
+}
+.title img{
+	position: absolute;
+	left: 0;
+	top:0;
+	width: .4rem;
+	height: .4rem;
+}
+.title span{
+	color: #fff;
+	font-size: .3rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	
+	
+}
+.game_box .contain{
+	width: 100%;
+	height: auto;
+	padding-top: .3rem;
+	background: #FFFFFF;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+
+}
+.game_box .contain a{
+	width: 3rem;
+	height: 3rem;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(255,0,0,.1);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: center;
+	margin-bottom: .3rem;
+	
+
+}
+.game_box .contain a img{
+	width: 1.8rem;
+	height: 1.25rem;
+}
+/*game页面结束*/
+
+
+
+/*game_zxh页面开始*/
+.zxhbox{
+	background-color: #FFFFFF;
+}
+.zxhbox .change{
+	position: absolute;
+	right: .2rem;
+	color: #E431CE;
+}
+.zxhbox .change.active{
+	color: #fff;
+}
+
+.game_box  .zxhcontain{
+	height: 7.06rem;
+	border-radius: 6px;
+	justify-content: space-around;
+	align-content: space-around;
+	box-shadow: 0 0 16px rgba(255,0,0,.4);
+	padding-top: 0;
+}
+.game_box .contain .card{
+	background: url("/KTV/public/img/game/at_03.png") center/cover no-repeat;
+	width: 2.09rem;
+	height: 2.09rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0rem;
+}
+
+.game_box .contain li.active{
+	font-size: 0.2rem;
+	background: #fff;
+	padding: 0 .2rem;
+	/*box-shadow: 0 0 10px rgba(254,49,142,.6);*/
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+.zxhbox .mask{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top:0;
+	bottom:0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	background: rgba(0,0,0,.8);
+	transform: scale(0,0);
+}
+.zxhbox .mask .info_1{
+	width: 100%;
+	height: 6.28rem;
+	/*background: goldenrod;*/
+	background: url("/KTV/public/img/game/zxh-background.png") center/contain no-repeat;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	top:2rem;
+	text-align: center;
+	padding-top: 1.8rem;
+}
+.zxhbox .mask .info_1 h2{
+	font-size: .36rem;
+	color: #ff3158;
+}
+.zxhbox .con .mask .info_1 p{
+	font-size: .24rem;
+	color: #ff3158;
+}
+.zxhbox .con .mask .info_1 .zxhcont{
+	width: 2.6rem;
+	height: 1rem;
+	color: #fff;
+	font-size: .18rem;
+	line-height: .4rem;
+	margin: 0 auto;
+	margin-top: .5rem;
+	transform: rotate(5deg);
+}
+.zxhbox .con .mask .info_1 button{
+	width: 3.4rem;
+	height: .7rem;
+	border: none;
+	margin-top: 1.3rem;
+	color: #fff;
+	font-size: .3rem;
+	outline: none;
+	background: url("/KTV/public/img/game/zxh-button.png") center/cover no-repeat;
+}
+.zxhbox .con .mask .info_1 .close{
+	width: .66rem;
+	height: .66rem;
+	border-radius: 50%;
+	background: #292D32;
+	color: #fff;
+	font-size: .3rem;
+	margin: 0 auto;
+	line-height: 0.66rem;
+	margin-top: .5rem;
+	border: 1px solid #fff;
+
+}
+.zxhbox .mask.active{
+	transform: scale(1,1);
+}
+.game_box .info{
+	width: 100%;
+	height: 3.75rem;
+	margin-top: .38rem;	
+}
+.game_box .info h3{
+	color: #fe318e;
+	font-size: .3rem;
+}
+.game_box .info p:nth-of-type(1){
+	font-size: .26rem;
+	font-weight: 400;
+	color: #8A8A8F;
+}
+.game_box .info p:nth-of-type(1) span{
+	font-size: .26rem;
+	color: #fe318e;
+	font-weight: 600;
+}
+.game_box .info div{
+	width: .4rem;
+	height: 5px;
+	background:  #fe318e;
+	margin: .16rem 0 .2rem;
+}
+.game_box .info p:nth-of-type(2){
+	font-size: .26rem;
+	color: #8A8A8F;
+	line-height: .4rem;
+	margin-bottom: .9rem;
+}
+.game_box .info button{
+	width: 3.42rem;
+	height: .72rem;
+	border-radius: 4px;
+	border: none;
+	color: #fe318e;
+	background: #FFF;
+	font-size: .28rem;
+	outline: none;
+	font-family: "微软雅黑" ;
+	letter-spacing: 1px;
+	border: 1px solid #fe318e;
+
+}
+.game_box .info button.active{
+
+	color: #fff;
+	background:  #fe318e;
+
+}
+/*game_zxh页面结束*/
+
+/*me页面开始*/
+.me_box{
+	width: 100%;
+	height: auto;
+	background: url(../img/me/HJW_W_bj.png);
+	background-size: cover;
+	padding: .26rem 0;
+}
+.me_box .me_title{
+	width: 100%;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.me_box .me_title a{
+	position: absolute;
+	left: 0px;
+}
+.me_box .me_title>a img{
+	width: .4rem;
+	height: .4rem;
+}
+
+.me_box .me_title div{
+	display: flex;
+	align-items: center;
+	color: #fff;
+	font-size:.28rem
+}
+.me_box .me_title div span{
+	display: block;
+	width:3px;
+	height: 3px;
+	border-radius: 50%;
+	background: #FFf;
+}
+.me_box .me_title p{
+	color: #fff;
+	font-size: .2rem
+}
+.me_box .info{
+	width: 100%;
+	height: 4.4rem;
+	background: url(../img/me/me_03.png) no-repeat;
+	background-size: 100% 100%;
+	background-position: 0 1.6rem;	
+	/*display: flex;
+	flex-direction: row-reverse;*/
+	position: relative;
+	padding-top: .6rem;
+}
+.me_box .info img:nth-of-type(1){
+	width: 1.58rem;
+	height: 1.58rem;
+	border-radius: 50%;
+	float: right;
+	margin-right: .5rem;
+	box-shadow: 0 0 16px rgba(155,0,155,.9);
+	/*position: relative;*/
+}
+.me_box .info img:nth-of-type(2){
+	width: .43rem;
+	height: .43rem;
+	border-radius: 50%;
+	position: absolute;
+	right: .5rem;
+	top: 1.7rem;
+	box-shadow: 0 0 16px rgba(155,155,0,.6);
+}
+.me_box .info p{
+	float:right;	
+}
+.me_box .info p:nth-of-type(1){
+	margin-top: .24rem;
+	margin-right: .24rem;
+	color: #fff;
+	text-align: right;
+}
+.me_box .info p:nth-of-type(2){
+	width: 100%;
+	text-align: right;
+	margin-top: .8rem;
+	color: #22B0FC;
+	font-size: .3rem;
+	margin-right: .4rem;
+	line-height: .34rem;
+	font-weight: 600;
+}
+.me_box .info p:nth-of-type(2) span{
+	font-size: .24rem;
+}
+.me_box .info p:nth-of-type(3){
+	color: #394042;
+	margin-right: .4rem;
+	font-size: .3rem;
+}
+.me_box .fan{
+	width: 100%;
+	height: auto;
+	padding: .1rem .18rem;
+	background: #fff;
+	display: flex;
+	justify-content: space-between;
+}
+.me_box .fan li{
+	width: 31%;
+	height: 1.23rem;
+	border-radius: 4px;
+	box-shadow: 0 0 6px rgba(155,0,155,.4);
+	background-size: cover;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.me_box .fan li:nth-of-type(1){
+	background: url(../img/me/HJW_W-02.png);
+	background-size: cover;
+}
+.me_box .fan li:nth-of-type(2){
+	background: url(../img/me/HJW_W-03.png);
+	background-size: cover;
+}
+.me_box .fan li:nth-of-type(3){
+	background: url(../img/me/HJW_W-04.png);
+	background-size: cover;
+}
+.me_box .fan li span:nth-of-type(1){
+	color: #ff2888;
+	font-size: .48rem;
+	font-weight: 400;
+}
+.me_box .fan li span:nth-of-type(2){
+	color: #22b0fc;
+	font-size: .26rem;
+	font-weight: 400;
+}
+.me_box .fan li p{
+	color: #565eff;
+	font-size: .26rem;
+}
+.me_box .wdzp{
+	width: 100%;
+	height: auto;
+	background: #fff;
+	padding: .3rem .3rem 0;
+}
+.me_box .wdzp>p:nth-of-type(1){
+	color: #f81f86;
+	font-size: .3rem;
+}
+.me_box .wdzp>p:nth-of-type(2){
+	color: #565eff;
+	font-size: .24rem;
+}
+.me_box .wdzp ul{
+	margin-top: .2rem;
+	width: 100%;
+	/*height: 20rem;*/
+	height: auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-between;
+	justify-content: center;
+}
+.me_box .wdzp ul li{
+	width: 100%;
+	height: 1rem;
+	border-bottom: 1px solid #CDCDCD;
+	padding-bottom: .1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+}
+.me_box .wdzp ul li p:nth-of-type(1){
+	color: #89919e;
+	font-size: .26rem;
+}
+.me_box .wdzp ul li p:nth-of-type(2){
+	color: #c6c6c6;
+	font-size: .24rem;
+}
+.me_box .wdzp ul li:last-child{
+	border: none;
+}
+/*me页面结束*/
+
+/*singer页面开始*/
+.songbox .nav ul{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	padding: 0 .2rem;
+}
+.songbox .nav ul li{
+	width: 25%;
+	display: flex;
+	align-items: center;
+}
+.songbox .nav ul li img{
+	width: .32rem;
+}
+.songbox .nav ul li a{
+	font-size: .24rem;
+	color: #fff;
+	margin-left: .1rem;
+	
+}
+.songbox form{
+	position: relative;
+}
+.songbox input{
+	width: 100%;
+	height: .68rem;
+	border: none;
+	border-radius: 4px;
+	margin: .2rem 0;
+	text-align: center;
+	font-size: .26rem;
+	outline: none;
+}
+.songbox form>img{
+	width: .3rem;
+	position: absolute;
+	left: 1.8rem;
+	top:.4rem;
+}
+.songbox .con .contain{
+	height: auto;
+	padding-top: .02rem;
+}
+.songbox .contain ul{
+	width: 100%;
+	height: auto;
+	padding: .05rem;
+	display: flex;
+	flex-wrap: wrap;
+	/*justify-content: inherit;*/
+	align-content: space-between;
+}
+.songbox .contain ul li:nth-child(1){
+	width: 100%;
+	height: 4rem;
+}
+.songbox .contain ul li:nth-child(2){
+	width: 39%;
+	height: 2.14rem;
+	margin: .05rem 0 .03rem;
+}
+.songbox .contain ul li:nth-child(3){
+	width: 29.5%;
+	height: 2.14rem;
+	background-size: cover;
+	margin: .05rem 0 .03rem;
+}
+.songbox .contain ul li:nth-child(4){
+	width: 29.5%;
+	height: 2.14rem;
+	background-size: cover;
+	margin: .05rem 0 .03rem;
+}
+.songbox .contain ul li:nth-child(5){
+	width: 38.8%;
+	height: 3.3rem;
+	background-size: cover;
+}
+.songbox .contain ul li:nth-child(6){
+	width: 59.8%;
+	height: 3.3rem;
+	background-size: cover;
+}
+.songbox .contain ul li a{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.songbox .contain ul li h3{
+	color: #FCFBFC;
+	font-size: .24rem;
+	padding-bottom: .2rem;
+}
+/*singer页面结束*/
+
+
+
+
+/*singer_1页面开始*/
+.songbox .title .choice {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	width: 1.1rem;
+	height: 0.4rem;
+	font-size: 0.2rem;
+	color: #fff;
+	font-weight: 400;
+	border-radius: 6px;
+	border: 1px solid #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.songbox .con .singer_1contain{
+	background: rgba(0,0,0,0);!important;
+}
+.songbox .con .singer_1contain ul{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	height: auto;
+}
+.songbox .con .singer_1contain ul li{
+	width: 31%;
+	height: auto;
+	padding: 0;
+	margin: 0;
+	margin-right: .2rem;
+	/*background-size: 100% 2.9rem;*/
+
+}
+.songbox .con .singer_1contain ul li a{
+	width: 100%;!important;
+	height: 2.9rem;!important;
+	box-shadow: 0 0 6px rgba(155,0,155,.4);
+	border: 1px solid rgba(255,255,255,.6);
+	border-radius: 6px;
+	margin: 0;
+}
+
+.songbox .con .singer_1contain ul li:nth-child(3n+0){
+	margin-right: 0;
+}
+.songbox .con .singer_1contain ul li h3{
+	color: #62636C;
+	margin-top: .1rem;
+}
+
+
+/*singer_1页面结束*/
+
+.rankbox .selector{
+	width: 100%;
+	height: .6rem;
+	background: #fff;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: .3rem 0;
+	padding: .02rem .03rem;
+
+}
+.rankbox .selector div{
+	width: 33.3%;
+	height: 100%;
+	text-align: center;
+	line-height: .56rem;
+	border-radius: 2px;	
+
+}
+.rankbox .selector div:nth-child(2){
+	background: #FE318E;
+	color: #fff;
+}
+.rankbox .banner{
+	width: 100%;
+	height: 3.19rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.rankbox .banner div{
+	position: absolute;
+	right: 0;	
+}
+.rankbox .banner div img{
+	width: 3.9rem;
+	height: 2.55rem;
+	border-radius: 4px;
+	border: 2px solid #fff;
+}
+.rankbox .banner div:nth-child(1){
+	left: 0;
+}
+.rankbox .banner div:nth-child(3){
+	left: 1rem;
+/*	margin: auto auto; */
+}
+.rankbox .banner div:nth-child(3) img{
+	width: 5.03rem;
+	height: 3.19rem;
+}
+.rankbox form{
+	top: -.9rem;
+}
+.rankbox form input{
+	width: 4.58rem;
+	height: .65rem;
+	border-radius: .65rem;
+	padding-left: .3rem;
+	text-align: left;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+
+}
+.rankbox form div{
+	width: .56rem;
+	height: .56rem;
+	border-radius: 50%;
+	background: #FE3191;
+	position: absolute;
+	right: 1.28rem;
+	top:0.04rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.rankbox form div img{
+	width: .36rem;
+	height: .36rem;
+}
+.rank {
+    padding-bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.rank li {
+	width: 100%;
+	height: 1.6rem;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	border-bottom: 1px dotted #C6C6C6; 
+}
+.rank li img {
+	width: 1.2rem;
+	height: 1.2rem;
+	margin-right: .4rem;
+}
+.rank li p {
+	width: 65%;
+	height: .9rem;
+	color: #58606D;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: center;
+}
+.rank li p span{
+	width: 100%;
+	color: #C6C6C6;
+}
+.rank li .add {
+	width: 0.55rem;
+    height: 0.55rem; 
+	background: url("../img/song/wyb_09.png");
+	background-size: cover;
+	margin-left: .1rem;
+}
+
+/*singer_rank页面结束*/
+
+.tj_contain{
+	
+	margin-top: .4rem;
+}
+.tj_contain li{
+	width: 100%;
+	height:3.16rem;
+	position: relative;
+	margin-bottom: .3rem;
+}
+.tj_contain li a>img{
+	width: 100%;
+	height:3.16rem;
+	border-radius: 4px;
+	border: 2px solid #fff;
+	box-shadow: 0 0 12px rgba(155,0,155,.6);
+}
+.tj_contain li a>div{
+	width: 3.2rem;
+	height: .5rem;
+	border-radius: 4px;
+	background: #3AB7FF;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: .24rem;
+	position: absolute;
+	bottom:.24rem;
+	left: .36rem;
+	/* right: 0;
+	margin: 0 auto; */
+	/*margin-left: -.1rem;*/
+}
+.tj_contain li a>div img{
+	width: .21rem;
+	height: auto;
+	margin: 0 .05rem;
+}
+.tj_contain li a>div:nth-child(2){
+	background: #1AA5F5;
+	bottom:.38rem;
+	left: 3.4rem;
+}
+
+
+/*bill_box页面*/
+.bill_box .title .dot{
+	width: .08rem;
+	height: .08rem;
+	border-radius: 50%;
+	background: #fff;
+	margin: 0 .2rem;
+}
+.bill_box .title .totlenum{
+	width: 100%;
+	text-align: center;
+	margin-top: .06rem;
+	color: #fff;
+}
+.bill_box .wrapper{
+	width: 100%;
+	min-height: 1rem;
+	background: #fff;
+	margin-top: 1rem;
+	border-radius: .1rem;
+	box-shadow: 0 0 0.2rem #e7e5f0;
+	margin-bottom: .5rem;
+	padding: .3rem;
+}
+.bill_box .wrapper li{
+	margin-bottom: .5rem;
+	/*margin-top: .1rem;*/
+}
+.bill_box .wrapper li>img{
+	width: 40%;
+}
+.bill_box .wrapper li>div{
+	width: 59%;
+	height: 1rem;
+	float: right;
+	padding-top: .2rem;
+}
+.bill_box .wrapper li div>h3{
+	font-size: .24rem;
+	color: #ff318e;
+}
+.bill_box .wrapper li div>p{
+	font-size: .2rem;
+	padding: 0 0 .16rem;
+	border-bottom: 1px dotted #C1C1C1;
+	color: #5B6167;
+
+}
+.bill_box .wrapper li div .shopnum{
+	/*width: 2rem;*/
+	height: .7rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: 0.1rem;
+	float: left;
+}
+.bill_box .wrapper li div .shopnum span {
+	margin-right: .1rem;
+	font-size: 0.24rem;
+	color: #FFF;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+}
+.bill_box .wrapper li div .shopnum span:nth-child(1) {
+	width: 0.38rem;
+	height: 0.38rem;
+	background: #DCDCDC;
+	border-radius: 50%;  }
+.bill_box .wrapper li div .shopnum span:nth-child(2) {
+	width: 0.8rem;
+	height: 0.38rem;
+	color: #858585;
+	border: 2px solid #DCDCDC;
+	border-radius: .36rem; }
+.bill_box .wrapper li div .shopnum span:nth-child(3) {
+	width: 0.38rem;
+	height: 0.38rem;
+	background: #33AFFE;
+	border-radius: 50%; }
+
+.bill_box .wrapper li div .shopnumbox .dpri{
+	font-size: .48rem;
+	color: #ff318e;
+	font-style: italic;
+	float: right;
+	margin-right: .1rem;
+}
+.bill_box .wrapper li div .shopnumbox>img{
+	width: .54rem;
+	float: right;
+	margin-top: .28rem;
+
+}
+
+
+.bill_box .zongjia{
+	margin-bottom: .2rem;
+	display: flex;
+	justify-content: flex-end;
+}
+.bill_box .zongjia>span:nth-child(1){
+	font-size: .68rem;
+	color: #d1d6e4;
+	font-weight: 600;
+	padding-right: .1rem;
+	border-right: 1px dotted #d1d6e4;
+	display: block;
+	float: left;
+}
+.bill_box .zongjia div{
+	width: 11%;
+	float: left;
+	margin-left: .1rem;
+	padding-top: .1rem;
+	font-weight: 600;
+}
+.bill_box .zongjia div>span:nth-child(1){
+	font-size: .22rem;
+	color: #ff318e;
+	line-height: .24rem;
+	font-weight: 600;
+}
+.bill_box .zongjia div>span:nth-child(2){
+	font-size: .22rem;
+	color: #d1d6e4;
+	line-height: .24rem;
+	font-weight: 600;
+}
+.bill_box .zongjia>span:nth-of-type(2){
+	font-size: .68rem;
+	color: #ff318e;
+	font-weight: 600;
+	padding-right: .1rem;
+	display: block;
+	float: left;
+}
+
+.succ_box .con>img{
+	width: 4rem;
+	display: block;
+	margin: 0 auto;
+	margin-top: 2rem;
+}
+.succ_box .con .tip{
+	width: 3.1rem;
+	height: .6rem;
+	border-radius: .6rem;
+	margin: 0 auto;
+	background: #fff;
+	color: #F33C96;
+	font-size: .24rem;
+	text-align: center;
+	line-height: .6rem;
+	box-shadow: 0 0 10px rgba(0,0,0,.2);
+	margin-top: .6rem;
+	outline: 2px solid black 5px;
+
+}
+
+
+.succ_box .con .btn{
+	width: 5.7rem;
+	height: .9rem;
+	border-radius: .9rem;
+	/*border: .05rem solid #fff;*/
+	background: red;
+	margin: 0 auto;
+	margin-top: 2rem;
+	background: url('/KTV/public/img/shop/cg_09.png') center/cover no-repeat;
+
+}

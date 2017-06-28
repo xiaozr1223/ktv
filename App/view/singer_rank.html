@@ -1,0 +1,70 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="/KTV/public/css/index.css" />
+		<script src="/KTV/public/js/rem.js"></script>
+	</head>
+
+	<body>
+		<div class="game_box songbox rankbox" style="height: auto">
+			<div class="con">
+				<div class="title">
+					<a href="/KTV/"><img src="/KTV/public/img/song/singer_tp_03.png" alt="" /></a>
+					<span>排行</span>
+				</div>
+				<div class="nav">
+					<ul>
+						<li>
+							<img src="/KTV/public/img/song/singer_tp_07.png" alt="" />
+							<a href="/KTV/index.php/music/index">歌手</a>
+						</li>
+						<li>
+							<img src="/KTV/public/img/song/singer_tp_07.png" alt="" />
+							<a href="/KTV/index.php/music/rank">排行</a>
+						</li>
+						<li>
+							<img src="/KTV/public/img/song/singer_tp_07.png" alt="" />
+							<a href="/KTV/index.php/music/popular">常唱</a>
+						</li>
+						<li>
+							<img src="/KTV/public/img/song/singer_tp_07.png" alt="" />
+							<a href="/KTV/index.php/music/tjgd">推荐歌单</a>
+						</li>
+					</ul>
+				</div>
+				<div class="selector">
+					<div>月排行</div>
+					<div>季排行</div>
+					<div>年排行</div>
+				</div>
+				<div class="banner">	
+					<div><img src="/KTV/public/img/song/rank_3_03.png" alt=""></div>
+					<div><img src="/KTV/public/img/song/rank_2_03.png" alt=""></div>
+					<div><img src="/KTV/public/img/song/rank-122_03.png" alt=""></div>
+					
+				</div>
+				<form action="">
+					<input type="text" placeholder="演员—薛之谦"/>
+					<div>
+					<img src="/KTV/public/img/song/singer_tp_091.png" alt="" />
+						
+					</div>
+				</form>
+				
+				<ul class="rank" style="background: #F5F3FF">
+					<?php foreach($data as $v):?>
+					<li>
+						<img src="<?php echo $v['pic']?>" alt="">
+						<p><?php echo $v['title']?>－<?php echo $v['name']?><br><span><?php echo $v['time']?></span></p>
+						<a class="add" href=""></a>
+					</li>
+					<?php endforeach;?>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><?php echo $title?></title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+</head>
+<style>
+    .tip,.tis{
+        width: 100%;
+        height: 3px;
+        position: absolute;
+        top:0;
+        /*bottom:0;*/
+        margin: auto 0;
+        background: rgba(0,0,0,.4);
+        color: #fff;
+        text-align: center;
+        line-height: 100px;
+        z-index: 9999;
+    }
+
+    .tip{
+        width: 0;
+        height: 3px;
+        background: red;
+        bottom: 3px;
+    }
+</style>
+<script>
+    $(function(){
+        /*下拉菜单*/
+       /* $('.dropdown').on('click',function(){
+            $('.dropdown-menu').toggle();//toggle(针对display为none的元素)
+            return false;
+        })*/
+        $('.dropdown-toggle').on('click', function () {
+            $(this).next().toggle();
+            return false;
+        });
+
+        $(document).on('click',function(){
+            $('.dropdown-menu').hide();
+//            return false;
+        })
+        $('.navbar-nav').on('click','li',function(){
+            $('.navbar-nav>li').removeClass('active');
+            $(this).addClass('active');
+        })
+        if($('.dropdown-toggle').html() == '音乐管理 '){
+            $('.navbar-nav').next().addClass('active')
+        }
+
+        /*ajax页面提示*/
+        $(document).ajaxStart(function(){
+            // $('.tip').css('display','block');
+            $('.tip').animate({width:'60%'})
+        });
+        $(document).ajaxSuccess(function(){
+            // console.log(2);
+            // $('.tip').css('height','10px');
+            $('.tip').animate({width:'100%'},function(){
+                $('.tis span').text('');
+//                $('.tip').text('保存成功')
+            })
+        })
+    })
+</script>
+<body>
+<div class="tis">
+    <!--<span>正在保存</span>-->
+    <div class="tip"></div>
+</div>
+<nav class="navbar navbar-default navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="font-size: 18px">KTV后台管理系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">音乐管理 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/KTV/index.php/admin#list">分类管理</a></li>
+                        <li><a href="/KTV/index.php/singer_admin#list">歌手管理</a></li>
+                        <li><a href="/KTV/index.php/song_admin#list">歌曲管理</a></li>
+                    </ul>
+                </li>
+                <li class="<?php echo $title == '游戏管理'?'active':'';?>"><a href="/KTV/index.php/game_Admin#list">游戏管理</a></li>
+                <li class="<?php echo $title == '商店管理'?'active':'';?>"><a href="/KTV/index.php/Goods_Admin#list">商店管理</a></li>
+                <li class="<?php echo $title == '用户管理'?'active':'';?>"><a href="#">用户管理</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+<!--/////////////////////////////////////////////////
+<style>
+    .dropdown-menu.active {
+        display: block;
+    }
+    .con {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    .container {
+        margin-top: 20px;
+        padding: 10px;
+    }
+    .form-group {
+        height: 40px;
+    }
+    .tip {
+        width: 3px;
+        height: 3px;
+        background: red;
+        border-radius: 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    input {
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #ccc;
+    }
+    .navbar-nav >li.active{
+    }
+    .affix .bs-docs-sidenav .nav>li.active{
+        background: #F8F8F8;
+    }
+</style>
+<body>
+<nav class="navbar navbar-default">
+    <div class="con">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <tton>
+                    <a class="navbar-brand" href="#">KTV管理系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="<?php echo $title=='商店管理'?'active':'' ?>"><a href="/index.php/wateradmin/index">商店管理<span class="sr-only">(current)</span></a><>
+                <li class="<?php echo $title=='游戏管理'?'active':'' ?>"><a href="/index.php/game_admin/index">游戏管理</a><>
+                <li class="<?php echo $title=='用户管理'?'active':'' ?>"><a href="#">用户管理</a><>
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">音乐管理<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+
+                        <li class="<?php echo $title=='歌单管理'?'active':'' ?>"><a href="/index.php/song4_admin#list">歌单管理</a><>
+                    </ul>
+
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<script>
+    $(function () {
+        $('.navbar-nav>li').on('click', function () {
+            $('.navbar-nav>li').removeClass('active');
+            $(this).addClass('active');
+        });
+        $('.dropdown-toggle').on('click', function () {
+            $(this).next().toggle();
+            return false;
+        });
+        $(document).on('click', function () {
+            $('.dropdown-menu').hide();
+        });
+    })
+</script>-->
+
+

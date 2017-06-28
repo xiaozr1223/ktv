@@ -1,0 +1,104 @@
+<?php include 'App/view/header_dome.html'?>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-2">
+            <?php include 'App/view/sidebar.html'?>
+        </div>
+        <div class="col-xs-10">
+            <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                <ul id="myTabs" class="nav nav-tabs">
+                    <li role="presentation" class="">
+                        <a href="#add" id="add-tab">添加歌曲</a>
+                    </li>
+                    <li role="presentation" class="active">
+                        <a href="#list" id="list-tab">歌曲列表</a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade" id="add" aria-labelledby="home-tab">
+                        <div class="panel-body">
+                            <form class="form-horizontal" id="form">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">歌名</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">地址</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="url" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">时间</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="duration" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">歌手名</label>
+                                    <div class="col-sm-10">
+                                        <input type="hidden" name="aid" value="">
+                                        <input type="text" id="search" name="artist_name" autocomplete="off" class="form-control" placeholder="">
+                                        <div class="well result" style="margin:5px 0"></div>
+                                        <div class="well history"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" id="submit" class="btn btn-default">添加</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade active in" id="list" aria-labelledby="profile-tab">
+                        <div class="panel-body">
+                            <div class="bs-example" data-example-id="bordered-table" style="width: 90%; margin: 0 auto;">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center">id</th>
+                                        <th style="text-align: center">歌名</th>
+                                        <th style="text-align: center">地址</th>
+                                        <th style="text-align: center">歌手名</th>
+                                        <th style="text-align: center">时间</th>
+                                        <th style="text-align: center">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="/KTV/public/js/song_admin.js"></script>
+<style>
+    td>input{
+        border: none;
+        outline: none;
+    }
+    tr>td:nth-child(2)>input{
+        width: 100px;
+    }
+    tr>td:nth-child(3)>input{
+        width: 150px;
+    }
+    tr>td:nth-child(4)>input{
+        width: 100px;
+    }
+    tr>td:nth-child(5)>input{
+        width: 50px;
+    }
+</style>

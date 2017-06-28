@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div class="panel panel-success" style="width: 600px;margin: 10px auto">
+    <div class="panel-heading">
+        <h3 class="panel-title">更改信息</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" action="/ktv/index.php/Admin/upd_music" method="post">
+            <input type="hidden" name="id" value="<?php echo  $data['id']?>">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">title</label>
+                <div class="col-sm-10">
+                    <input type="text" name="title" class="form-control" id="inputEmail3" value="<?php echo $data['title']?>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPassword3" class="col-sm-2 control-label">url</label>
+                <div class="col-sm-10">
+                    <input type="text" name="url" class="form-control" id="inputPassword3" value="<?php echo $data['url']?>">
+                </div>
+            </div>
+            <div class="form-group">
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">确认提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

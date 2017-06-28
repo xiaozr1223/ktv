@@ -1,0 +1,128 @@
+﻿<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="/KTV/public/css/index.css" />
+		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+		<script src="/KTV/public/js/rem.js"></script>
+	</head>
+
+	<body>
+		<div class="game_box zxhbox">
+			<div class="con">
+				<div class="title zxhtitle">
+					<a href="/KTV/index.php/game"><img src="/KTV/public/img/song/singer_tp_03.png" alt="" /></a>
+					<span>真心话大冒险</span>
+					<span class="change">换一批</span>
+				</div>
+				<div class="mask">
+					<div class="info_1">
+						<h2>真心话</h2>
+						<p>The truth of your heart</p>
+						<div class="zxhcont">你会不会在意ta的过去？为什么？</div>
+						<button>再玩一次</button>
+						<div class="close">X</div>
+					</div>
+				</div>
+				<ul class="contain zxhcontain">
+					<?php foreach($data as $v):?>
+					<li class="card"><?php echo $v['content']?></li>
+					<?php endforeach;?>
+				</ul>
+				<div class="info">
+					<h3>注/意/事/项</h3>
+					<p>MATTERS NEEDING <span>ATTENTION</span></p>
+					<div class="sk"></div>
+					<p>1.先选真心话还是大冒险；<br>
+					   2.再次从上方九宫格中选取一个，如果选中的无法实现，有一次机会重新选择。</p>
+					<button class="zxh_btn active">真心话</button>
+					<button class="dmx_bnt">大冒险</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script>
+$(function(){
+	var index = 1;
+	var mask = $('.mask');
+	$('ul').on('click','li',function(){
+		$(this).addClass('active');
+		$(mask).addClass('active');
+		$('.mask .zxhcont').html(this.innerHTML);
+		if($('ul li.active').length == 9){
+			$('.change').addClass('active');
+		}
+	});
+
+	$('.mask .info_1 .close').on('click',function () {
+		$(mask).removeClass('active');
+	});
+
+	$('.zxhtitle').on('click','.change.active',function(){
+		var that = this;
+		index++;
+		if($('.zxh_btn').hasClass("active")){
+			var id = 1;
+		}else{
+			var id = 2;
+		}
+		$.ajax({
+			url:'/ktv/index.php/game/change',
+			data:{page:index, cid:id},
+				success:function (data) {
+				$(that).removeClass('active');
+				$('ul').empty();
+				data = JSON.parse(data);
+				$.each(data,function(i,v){
+					$(`<li class="card">${v['content']}</li>`).appendTo($('ul'));
+				})
+			}
+		})
+	});
+
+	$('.dmx_bnt').on('click',function(){
+		$(this).addClass('active');
+		$('.zxh_btn').removeClass('active');
+		$.ajax({
+			url:'/ktv/index.php/game/change',
+			data:{page:1, cid:2},
+			success:function (data) {
+				index=1;
+				$('.zxhtitle .change').removeClass('active');
+				$('.info_1 h2').html('大冒险');
+				$('.info_1 p').html('Crazy adventure ');
+				$('ul').empty();
+				data = JSON.parse(data);
+				$.each(data,function(i,v){
+					$(`<li class="card">${v['content']}</li>`).appendTo($('ul'));
+				})
+			}
+		})
+	});
+
+	$('.zxh_btn').on('click',function(){
+		$(this).addClass('active');
+		$('.dmx_bnt').removeClass('active');
+		$.ajax({
+			url:'/ktv/index.php/game/change',
+			data:{page:1, cid:1},
+			success:function (data) {
+				index=1;
+				$('.zxhtitle .change').removeClass('active');
+				$('.info_1 h2').html('真心话');
+				$('.info_1 p').html('The truth of your heart ');
+				$('ul').empty();
+				data = JSON.parse(data);
+				console.log(data);
+				$.each(data,function(i,v){
+					$(`<li class="card">${v['content']}</li>`).appendTo($('ul'));
+				})
+			}
+		})
+	})
+})
+</script>

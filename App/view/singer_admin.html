@@ -1,0 +1,108 @@
+<?php include 'App/view/header_dome.html'?>
+
+<div class="container">
+    <div class="row"><!--左右分栏-->
+        <div class="col-xs-2">
+            <?php include 'App/view/sidebar.html'?>
+        </div>
+        <div class="col-xs-10">
+            <div class="bs-example bs-example-tabs" data-example-id="togglable-tabs">
+                <ul id="myTabs" class="nav nav-tabs">
+                    <li role="presentation" class="">
+                        <a href="#add" id="add-tab">添加歌手</a>
+                    </li>
+                    <li role="presentation" class="active">
+                        <a href="#list" id="list-tab">歌手列表</a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade" id="add" aria-labelledby="home-tab">
+                        <div class="panel-body">
+                            <form class="form-horizontal" id="form">
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">名字</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="name" class="form-control" id="inputEmail3" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">图片</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" name="pic" class="form-control" placeholder="">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword3" class="col-sm-2 control-label">类型</label>
+
+                                    <div class="col-sm-10">
+                                        <?php foreach($data as $v):?>
+
+                                        <label class="radio-inline">
+
+                                            <?php if(isset($_REQUEST['id']) && $v['id'] == $_REQUEST['id']):?>
+                                            <input type="radio" name="cid" value="<?php echo $v['id']?>" checked>
+                                            <?php else:?>
+                                            <input type="radio" name="cid" value="<?php echo $v['id']?>">
+                                            <?php endif;?>
+                                            <?php if(!isset($_REQUEST['id'])):?>
+                                            <input type="radio" name="cid" value="<?php echo $v['id']?>" checked>
+                                            <?php endif;?>
+
+                                            <?php echo $v['title']?>
+                                        </label>
+                                        <?php endforeach;?>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" id="submit" class="btn btn-default">添加</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade active in" id="list" aria-labelledby="profile-tab">
+                        <div class="panel-body">
+                            <div class="bs-example" data-example-id="bordered-table" style="width: 90%; margin: 0 auto;">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th style="text-align: center">id</th>
+                                        <th style="text-align: center">名字</th>
+                                        <th style="text-align: center">图片</th>
+                                        <th style="text-align: center">类型</th>
+                                        <th style="text-align: center">操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script src="/ktv/public/js/singer_admin.js"></script>
+<style>
+    td>input{
+        border: none;
+        outline: none;
+    }
+    tr>td:nth-child(2)>input{
+        width: 100px;
+    }
+    tr>td:nth-child(3)>input{
+        width: 150px;
+    }
+</style>

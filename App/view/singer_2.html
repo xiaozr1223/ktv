@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="/KTV/public/css/index_1.css" />
+		<script src="/KTV/public/js/rem.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+	</head>
+	<body>
+	<div class="topbg" style="background: url(<?php echo $data['url']?>) center -2rem/cover no-repeat;"></div>
+	<div class="singer2_wrap" style="position: relative;z-index: 2">
+		<div class="title">
+			<a class="back" href='#' onClick='JavaScript:history.back(1);'></a>
+			<h4><?php echo $data['name']?> </h4>
+			<a href="/KTV/index.php/music/done">已点歌曲</a>
+		</div>
+		<div class="info">
+			<div class="ltu">
+				<div></div>
+				<div class="ltuimg" style="background: url(<?php echo $data['url']?>) center/cover no-repeat"></div>
+			</div>
+			<!--<img src="/KTV/public/img/song/sj_12.png" alt="">-->
+			<div>
+				<p class="p1"><?php echo $data['name']?> — <?php echo $data['style']?></p>
+				<div>
+					<img src="/KTV/public/img/song/sj_13.png" alt="">
+					<span>歌曲 92</span>
+					<img src="/KTV/public/img/song/sj_32.png" alt="">
+					<span>MV 24</span>
+				</div>
+				<p class="p2">本月点击量 : <span>49080</span></p>
+			</div>
+		</div>
+		<ul>
+			<?php foreach($data1 as $k=>$v):?>
+			<li class="xh">
+				<span class="span">0<?php echo $k + 1;?></span>
+				<p><?php echo $v['name'];?><br><span><?php echo $v['duration'];?></span></p>
+				<a href=""></a>
+			</li>
+			<?php endforeach;?>
+		</ul>
+	</div>
+	</body>
+	<!--<script>-->
+		<!--$(".span").each(function(i){-->
+			<!--$(this).text(i+1);-->
+		<!--})-->
+	<!--</script>-->
+</html>
+<style>
+	ul li:nth-child(3)~li .span{
+		color: #89919E;
+	}
+</style>

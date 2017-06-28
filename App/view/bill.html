@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/KTV/public/css/index.css" />
+    <script src="/KTV/public/js/rem.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="game_box bill_box">
+    <div class="con">
+        <div class="title" style="flex-wrap: wrap">
+            <a href="/KTV/index.php/shop"><img src="/KTV/public/img/song/singer_tp_03.png" alt="" /></a>
+            <span class="dot"></span>
+            <span>0806</span>
+            <span style="font-weight: 400">房间已选商品</span>
+            <span class="dot"></span>
+            <div class="totlenum">共2件</div>
+        </div>
+
+        <ul class="wrapper">
+
+        </ul>
+        <div class="zongjia">
+            <span>TOTAL</span>
+            <div>
+                <span>总价</span>
+                <span>RMB</span>
+            </div>
+            <span class="totle">0.00</span>
+        </div>
+        <a href="/KTV/index.php/shop/succeed">
+            <img src="/ktv/public/img/shop/lm-30_39.png" alt="" width="80%" style="display:block;margin:0 auto">
+        </a>
+
+
+    </div>
+</div>
+</body>
+</html>
+<script>
+    $(function(){
+        var arrnow=localStorage.getItem("choice_info");
+        var chioceList=JSON.parse(arrnow);
+
+    /*点击加号*/
+    $('ul').on('click','.plus',function(){
+        let data = JSON.parse($(this).closest('li').attr('data'));
+        console.log(data.id);
+        let temp = chioceList.filter(function(value,index){
+            return data.id == value.id;
+        });
+        if(!temp.length){
+            data.num = 1;
+            chioceList.push(data);
+            $(this).prev().text('1');
+        }else{
+            temp[0].num += 1;
+            $(this).prev().text(temp[0].num);
+        }
+        render();
+    });
+    /*点击减号*/
+    $('ul').on('click','.subtract',function(){
+        let data = JSON.parse($(this).closest('li').attr('data'));
+        let temp = chioceList.filter(function(value,index){
+            return data.id == value.id;
+        });
+        if(temp.length){
+            temp[0].num -= 1;
+            $(this).next().text(temp[0].num);
+            if(temp[0].num == 0){
+                chioceList = chioceList.filter(function(value,index){
+                    return temp[0].id != value.id;
+                })
+            }
+        }
+        render();
+    });
+
+    function render(){
+        $('ul').empty();
+        chioceList.forEach(function(value,index){
+            let value1 = JSON.stringify(value)
+            let dpri=value.price*value.num;
+            $(`
+         <li data='${value1}'>
+                <img src="${value.pic}" alt="">
+                <div>
+                    <h3>${value.name}</h3>
+                    <p>可以让你飞的鸡尾酒 <span>300ml</span></p>
+                    <div class="shopnumbox">
+                        <div class="shopnum">
+                            <span class="subtract"> - </span>
+                            <span> ${value.num} </span>
+                            <span class="plus"> + </span>
+                        </div>
+                        <img src="/ktv/public/img/shop/lm-30_14_03.png" alt="">
+                        <span class="dpri">${dpri.toFixed(1)}</span>
+                    </div>
+                </div>
+            </li>
+            `).appendTo($('ul'))
+        })
+        $('.totle').text(getTotle());
+        $('.totlenum').text(getNum());
+    }
+    render();
+
+    /*总价格*/
+    function getTotle() {
+        let totle = 0;
+        chioceList.forEach(function(value,index){
+            totle += value.num*value.price;
+        })
+        return totle.toFixed(2);
+    }
+
+    /*总数*/
+    function getNum() {
+        let num = 0;
+        chioceList.forEach(function(value,index){
+            num += value.num;
+        })
+       return "共"+num+"件";
+    }
+});
+
+
+
+</script>

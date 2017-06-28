@@ -1,0 +1,23 @@
+<ul class="nav bs-docs-sidenav">
+    <a href="">音乐管理</a>
+    <ul class="nav">
+        <li><a href="/KTV/index.php/admin#list" class="<?php echo $title=='分类管理'?'active':'';?>">分类管理</a></li>
+        <li><a href="/KTV/index.php/singer_admin#list" class="<?php echo $title=='歌手管理'?'active':'';?>">歌手管理</a></li>
+        <li><a href="/KTV/index.php/song_admin#list" class="<?php echo $title=='歌曲管理'?'active':'';?>">歌曲管理</a></li>
+        <!--<li><a href="/KTV/index.php/gedan_admin#list" class="<?php echo $title=='歌单管理'?'active':'';?>">歌单管理</a></li>-->
+    </ul>
+</ul>
+<style>
+    .container .bs-docs-sidenav>a{
+        padding-left: 18px;
+        font-weight: 700;
+        color: #563d7c;
+        background-color: transparent;
+        border-left: 2px solid #563d7c;
+    }
+    .container .bs-docs-sidenav .nav li a.active{
+        /*background-color: transparent;*/
+        background-color: #999999;
+        color: #fff;
+    }
+</style>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="/KTV/public/css/index_1.css" />
+		<script src="/KTV/public/js/rem.js"></script>
+		<script src="https://cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+		<script src="/KTV/public/js/shop.js"></script>
+	</head>
+	<body>
+	<div class="singer2_wrap songdone_wrap shop_wrap">
+		<div class="title">
+			<a class="back" href="/ktv/"></a>
+			<h4>
+				<p class="left active">酒水<span>00</span></p>
+				<p class="right">零食<span>00</span></p>
+				<div></div>
+			</h4>
+		</div>
+		<ul class="wine list active">
+			<?php foreach($wine as $v):?>
+			<li data='<?php echo json_encode($v)?>'>
+				<img src="<?php echo $v['pic']?>" alt="">
+				<div>
+					<div class="shop1">
+						<span><?php echo $v['name']?></span>
+						<div>
+							<?php
+								for ($x=0; $x<$v['hot']; $x++) {
+								 echo '<img src="/KTV/public/img/shop/lm_06_03.png">';
+								}
+							?>
+						</div>
+						<p>￥<?php echo $v['price']?>/瓶</p>
+					</div>
+					<div class="shopnum">
+						<span class="subtract"> - </span>
+						<span> 0 </span>
+						<span class="plus"> + </span>
+					</div>
+				</div>
+			</li>
+			<?php endforeach;?>
+		</ul>
+
+		<ul class="neck list">
+			<?php foreach($neck as $v):?>
+			<li data='<?php echo json_encode($v)?>'>
+				<img src="<?php echo $v['pic']?>" alt="">
+				<div>
+					<div class="shop1">
+						<span><?php echo $v['name']?></span>
+						<div>
+							<?php
+								for ($x=0; $x<$v['hot']; $x++) {
+								 echo '<img src="/KTV/public/img/shop/lm_06_03.png">';
+							}
+							?>
+						</div>
+						<p>￥<?php echo $v['price']?>/瓶</p>
+					</div>
+					<div class="shopnum">
+						<span class="subtract"> - </span>
+						<span> 0 </span>
+						<span class="plus"> + </span>
+					</div>
+				</div>
+			</li>
+			<?php endforeach;?>
+		</ul>
+		<div class="bottom">
+			<div style="display: flex;align-items: center">
+				<span style="width: 10%">已选</span>
+				<div class="chioce" style="width: 80%;height:0.6rem;border-bottom:1px solid #aBaBaB;display: flex;flex-wrap: nowrap;overflow-x: scroll; justify-content: flex-start;">
+				</div>
+				<img src="/KTV/public/img/shop/011_03.png" alt="">
+			</div>
+
+			<div>
+				<div>
+			合计：<span class="totle">00.00</span> RMB
+				</div>
+				<a href="/KTV/index.php/shop/bill" class="store">
+				<img src="/KTV/public/img/shop/lm_10.png" alt="">
+				</a>
+			</div>
+		</div>
+	</div>
+	</body>
+</html>
+<script>
+$(function(){
+//	$('.right').on('click',function(){
+//		$(this).addClass('active');
+//		$('.left').removeClass('active');
+//		$.ajax({
+//			url:'/ktv/index.php/shop/bill',
+//			data:{cid:2},
+//			success: function(data){
+//				data = JSON.parse(data);
+//				console.log(data);
+//				$('.neck').empty();
+//				$.each(data,function(i,v){
+//					$(`
+//				<li>
+//				<img src=${v['pic']} alt="">
+//				<div>
+//					<div class="shop1">
+//						<span>${v['name']}</span>
+//						<div>
+//							<?php
+//								for ($x=0; $x<$v['hot']; $x++) {
+//								 echo '<img src="/KTV/public/img/shop/lm_06_03.png">';
+//								}
+//							?>
+//						</div>
+//						<p>￥${v['price']}/瓶</p>
+//					</div>
+//					<div class="shopnum">
+//						<span> - </span>
+//						<span> 02 </span>
+//						<span> + </span>
+//					</div>
+//				</div>
+//			</li>`).appendTo($('ul'))
+//				})
+//			}
+//
+//		})
+//	});
+//	$('.left').on('click',function(){
+//		$(this).addClass('active').fadeIn();
+//		$('.right').removeClass('active');
+//		$.ajax({
+//			url:'/ktv/index.php/shop/bill',
+//			data:{cid:1},
+//			success: function(data){
+//				data = JSON.parse(data);
+//				console.log(data);
+//				$('.neck').empty();
+//				$.each(data,function(i,v){
+//					$(`
+//				<li>
+//				<img src=${v['pic']} alt="">
+//				<div>
+//					<div class="shop1">
+//						<span>${v['name']}</span>
+//						<div>
+//							<?php
+//								for ($x=0; $x<$v['hot']; $x++) {
+//								 echo '<img src="/KTV/public/img/shop/lm_06_03.png">';
+//								}
+//							?>
+//						</div>
+//						<p>￥${v['price']}/瓶</p>
+//					</div>
+//					<div class="shopnum">
+//						<span> - </span>
+//						<span> 02 </span>
+//						<span> + </span>
+//					</div>
+//				</div>
+//			</li>`).appendTo($('ul'))
+//				})
+//			}
+//
+//		})
+//	})
+
+
+
+
+
+
+
+
+
+
+})
+</script>
